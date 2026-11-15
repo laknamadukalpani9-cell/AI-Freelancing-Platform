@@ -1,0 +1,19 @@
+@model AIFreelancingPlatform.Models.Database.Project_Requirement
+
+<h2>Delete Project Requirement</h2>
+
+<h4>Are you sure you want to delete this requirement?</h4>
+
+<div class="border p-3 mb-3">
+    <p><strong>Requirement ID:</strong> @Model.Requirement_ID</p>
+    <p><strong>Project:</strong> @Model.Project?.Project_Name</p>
+    <p><strong>Skill:</strong> @Model.Skill?.Skill_Name</p>
+    <p><strong>Requirement Details:</strong> @Model.Requirement_Details</p>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Requirement_ID" />
+
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

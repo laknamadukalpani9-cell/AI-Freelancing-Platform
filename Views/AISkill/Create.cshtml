@@ -1,0 +1,20 @@
+@model AIFreelancingPlatform.Models.Database.AI_Skill
+
+<h2>Add New AI Skill</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group mb-3">
+        <label asp-for="Skill_Name" class="control-label">Skill Name</label>
+        <input asp-for="Skill_Name" class="form-control" />
+        <span asp-validation-for="Skill_Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Description" class="control-label">Description</label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</form>

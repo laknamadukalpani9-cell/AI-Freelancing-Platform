@@ -1,0 +1,46 @@
+@model IEnumerable<AIFreelancingPlatform.Models.Database.Client>
+
+@{
+    ViewData["Title"] = "Client Management";
+}
+
+<h2>Client Management</h2>
+
+<a asp-action="Create" class="btn btn-primary mb-3">
+    Add New Client
+</a>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Company</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var client in Model)
+        {
+            <tr>
+                <td>@client.Client_ID</td>
+                <td>@client.Name</td>
+                <td>@client.Email</td>
+                <td>@client.Phone</td>
+                <td>@client.Company_Name</td>
+                <td>
+                    <a asp-action="Edit"
+                       asp-route-id="@client.Client_ID"
+                       class="btn btn-warning">Edit</a>
+
+                    <a asp-action="Delete"
+                       asp-route-id="@client.Client_ID"
+                       class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,34 @@
+@model AIFreelancingPlatform.Models.Database.Project_Requirement
+
+<h2>Edit Project Requirement</h2>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="Requirement_ID" />
+
+    <div class="form-group mb-3">
+        <label asp-for="Project_ID">Project</label>
+        <select asp-for="Project_ID" asp-items="ViewBag.Project_ID" class="form-control">
+            <option value="">-- Select Project --</option>
+        </select>
+        <span asp-validation-for="Project_ID" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Skill_ID">AI Skill</label>
+        <select asp-for="Skill_ID" asp-items="ViewBag.Skill_ID" class="form-control">
+            <option value="">-- Select Skill --</option>
+        </select>
+        <span asp-validation-for="Skill_ID" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Requirement_Details">Requirement Details</label>
+        <textarea asp-for="Requirement_Details" class="form-control"></textarea>
+        <span asp-validation-for="Requirement_Details" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+
+</form>

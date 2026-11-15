@@ -1,0 +1,45 @@
+@model AIFreelancingPlatform.Models.Database.Proposal
+
+<h2>Edit Proposal</h2>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="Proposal_ID" />
+
+    <div class="form-group mb-3">
+        <label>Project</label>
+        <select asp-for="Project_ID" asp-items="ViewBag.Project_ID" class="form-control">
+            <option value="">-- Select Project --</option>
+        </select>
+        <span asp-validation-for="Project_ID" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Freelancer</label>
+        <select asp-for="Freelancer_ID" asp-items="ViewBag.Freelancer_ID" class="form-control">
+            <option value="">-- Select Freelancer --</option>
+        </select>
+        <span asp-validation-for="Freelancer_ID" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Proposed_Amount">Proposed Amount</label>
+        <input asp-for="Proposed_Amount" type="number" step="0.01" class="form-control" />
+        <span asp-validation-for="Proposed_Amount" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Proposal_Status">Proposal Status</label>
+        <select asp-for="Proposal_Status" class="form-control">
+            <option value="">-- Select Status --</option>
+            <option value="Pending">Pending</option>
+            <option value="Accepted">Accepted</option>
+            <option value="Rejected">Rejected</option>
+        </select>
+        <span asp-validation-for="Proposal_Status" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+
+</form>

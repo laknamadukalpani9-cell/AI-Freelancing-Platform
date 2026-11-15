@@ -1,0 +1,42 @@
+@model IEnumerable<AIFreelancingPlatform.Models.Database.AI_Skill>
+
+@{
+    ViewData["Title"] = "AI Skills";
+}
+
+<h2 class="mb-4">AI Skills Management</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Add New Skill</a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Skill ID</th>
+            <th>Skill Name</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Skill_ID</td>
+                <td>@item.Skill_Name</td>
+                <td>@item.Description</td>
+                <td>
+                    <a asp-action="Edit"
+                       asp-route-id="@item.Skill_ID"
+                       class="btn btn-warning btn-sm">Edit</a>
+
+                    <a asp-action="Delete"
+                       asp-route-id="@item.Skill_ID"
+                       class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

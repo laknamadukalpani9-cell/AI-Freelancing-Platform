@@ -1,0 +1,46 @@
+@model IEnumerable<AIFreelancingPlatform.Models.Database.Payment>
+
+@{
+    ViewData["Title"] = "Payments";
+}
+
+<h2 class="mb-4">Payment Management</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Add New Payment</a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Payment ID</th>
+            <th>Assignment ID</th>
+            <th>Amount</th>
+            <th>Payment Date</th>
+            <th>Payment Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Payment_ID</td>
+                <td>@item.Assignment_ID</td>
+                <td>@item.Amount</td>
+                <td>@item.Payment_Date</td>
+                <td>@item.Payment_Status</td>
+                <td>
+                    <a asp-action="Edit"
+                       asp-route-id="@item.Payment_ID"
+                       class="btn btn-warning btn-sm">Edit</a>
+
+                    <a asp-action="Delete"
+                       asp-route-id="@item.Payment_ID"
+                       class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

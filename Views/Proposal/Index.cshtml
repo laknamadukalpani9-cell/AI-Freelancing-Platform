@@ -1,0 +1,46 @@
+@model IEnumerable<AIFreelancingPlatform.Models.Database.Proposal>
+
+@{
+    ViewData["Title"] = "Proposals";
+}
+
+<h2 class="mb-4">Proposal Management</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Add New Proposal</a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Proposal ID</th>
+            <th>Project</th>
+            <th>Freelancer</th>
+            <th>Proposed Amount</th>
+            <th>Proposal Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Proposal_ID</td>
+                <td>@item.Project?.Project_Name</td>
+                <td>@item.Freelancer?.Name</td>
+                <td>@item.Proposed_Amount</td>
+                <td>@item.Proposal_Status</td>
+                <td>
+                    <a asp-action="Edit"
+                       asp-route-id="@item.Proposal_ID"
+                       class="btn btn-warning btn-sm">Edit</a>
+
+                    <a asp-action="Delete"
+                       asp-route-id="@item.Proposal_ID"
+                       class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

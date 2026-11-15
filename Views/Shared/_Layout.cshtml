@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AI Freelancing Platform</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/AIFreelancingPlatform.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow mb-4">
+            <div class="container-fluid">
+
+                <a class="navbar-brand fw-bold"
+                   asp-controller="Home" asp-action="Index">
+                    AI Freelancing Platform
+                </a>
+
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#mainNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav me-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                Main Management
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-controller="Freelancer" asp-action="Index">Freelancer Management</a></li>
+                                <li><a class="dropdown-item" asp-controller="Client" asp-action="Index">Client Management</a></li>
+                                <li><a class="dropdown-item" asp-controller="Project" asp-action="Index">Project Management</a></li>
+                                <li><a class="dropdown-item" asp-controller="Assignment" asp-action="Index">Assignment Management</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                AI Management
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-controller="AIService" asp-action="Index">AI Service Management</a></li>
+                                <li><a class="dropdown-item" asp-controller="AISkill" asp-action="Index">AI Skill Management</a></li>
+                                <li><a class="dropdown-item" asp-controller="FreelancerService" asp-action="Index">Freelancer Service Management</a></li>
+                                <li><a class="dropdown-item" asp-controller="FreelancerSkill" asp-action="Index">Freelancer Skill Management</a></li>
+                                <li><a class="dropdown-item" asp-controller="ProjectRequirement" asp-action="Index">Project Requirement Management</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                Other Management
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-controller="Proposal" asp-action="Index">Proposal Management</a></li>
+                                <li><a class="dropdown-item" asp-controller="Payment" asp-action="Index">Payment Management</a></li>
+                                <li><a class="dropdown-item" asp-controller="Review" asp-action="Index">Review Management</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top text-muted py-3 mt-4">
+        <div class="container text-center">
+            &copy; 2026 - AI Freelancing Platform
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

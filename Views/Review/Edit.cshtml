@@ -1,0 +1,38 @@
+@model AIFreelancingPlatform.Models.Database.Review
+
+<h2>Edit Review</h2>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="Review_ID" />
+
+    <div class="form-group mb-3">
+        <label>Assignment ID</label>
+        <select asp-for="Assignment_ID" asp-items="ViewBag.Assignment_ID" class="form-control">
+            <option value="">-- Select Assignment --</option>
+        </select>
+        <span asp-validation-for="Assignment_ID" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Rating">Rating</label>
+        <input asp-for="Rating" type="number" min="1" max="5" class="form-control" />
+        <span asp-validation-for="Rating" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Comment">Comment</label>
+        <textarea asp-for="Comment" class="form-control"></textarea>
+        <span asp-validation-for="Comment" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Review_Date">Review Date</label>
+        <input asp-for="Review_Date" type="date" class="form-control" />
+        <span asp-validation-for="Review_Date" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+
+</form>

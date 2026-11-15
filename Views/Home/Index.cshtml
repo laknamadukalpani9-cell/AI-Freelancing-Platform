@@ -1,0 +1,166 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container-fluid">
+
+    <div class="p-5 mb-4 rounded-3 shadow"
+         style="background: linear-gradient(120deg, #172554, #2563eb); color: white;">
+
+        <h1 class="display-5 fw-bold">Welcome to AI Freelancing Platform</h1>
+
+        <p class="fs-5">
+            Manage freelancers, clients, projects and AI services in one place.
+        </p>
+
+        <a asp-controller="Project" asp-action="Index"
+           class="btn btn-light btn-lg mt-3">
+            Explore Projects
+        </a>
+    </div>
+
+    <h2 class="mb-4">Dashboard Management</h2>
+
+    <div class="row g-4">
+
+        <div class="col-md-3">
+            <div class="card shadow h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Freelancers</h5>
+                    <p>Manage freelancer information.</p>
+                    <a asp-controller="Freelancer" asp-action="Index"
+                       class="btn btn-primary">Manage</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Clients</h5>
+                    <p>Manage client information.</p>
+                    <a asp-controller="Client" asp-action="Index"
+                       class="btn btn-primary">Manage</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Projects</h5>
+                    <p>Manage freelancing projects.</p>
+                    <a asp-controller="Project" asp-action="Index"
+                       class="btn btn-primary">Manage</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Assignments</h5>
+                    <p>Manage project assignments.</p>
+                    <a asp-controller="Assignment" asp-action="Index"
+                       class="btn btn-primary">Manage</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow h-100">
+                <div class="card-body">
+                    <h5 class="card-title">AI Services</h5>
+                    <p>Manage available AI services.</p>
+                    <a asp-controller="AIService" asp-action="Index"
+                       class="btn btn-primary">Manage</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow h-100">
+                <div class="card-body">
+                    <h5 class="card-title">AI Skills</h5>
+                    <p>Manage AI-related skills.</p>
+                    <a asp-controller="AISkill" asp-action="Index"
+                       class="btn btn-primary">Manage</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Proposals</h5>
+                    <p>Manage freelancer proposals.</p>
+                    <a asp-controller="Proposal" asp-action="Index"
+                       class="btn btn-primary">Manage</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Payments</h5>
+                    <p>Manage project payments.</p>
+                    <a asp-controller="Payment" asp-action="Index"
+                       class="btn btn-primary">Manage</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Reviews</h5>
+                    <p>Manage client reviews.</p>
+                    <a asp-controller="Review" asp-action="Index"
+                       class="btn btn-primary">Manage</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Project Requirements</h5>
+                    <p>Manage project skill requirements.</p>
+                    <a asp-controller="ProjectRequirement" asp-action="Index"
+                       class="btn btn-primary">Manage</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Freelancer Services</h5>
+                    <p>Manage freelancer services.</p>
+                    <a asp-controller="FreelancerService" asp-action="Index"
+                       class="btn btn-primary">Manage</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Freelancer Skills</h5>
+                    <p>Manage freelancer skills.</p>
+                    <a asp-controller="FreelancerSkill" asp-action="Index"
+                       class="btn btn-primary">Manage</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="text-center mt-5 mb-4">
+        <p class="text-muted">
+            AI Freelancing Platform | 2026
+        </p>
+    </div>
+
+</div>

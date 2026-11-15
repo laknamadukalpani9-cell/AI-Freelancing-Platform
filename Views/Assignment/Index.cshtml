@@ -1,0 +1,43 @@
+@model IEnumerable<AIFreelancingPlatform.Models.Database.Assignment>
+
+@{
+    ViewData["Title"] = "Assignment Management";
+}
+
+<h2>Assignment Management</h2>
+
+<a asp-action="Create" class="btn btn-primary mb-3">Add New Assignment</a>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Project</th>
+            <th>Freelancer</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var assignment in Model)
+        {
+            <tr>
+                <td>@assignment.Assignment_ID</td>
+                <td>@assignment.Project?.Project_Name</td>
+                <td>@assignment.Freelancer?.Name</td>
+                <td>@assignment.Start_Date</td>
+                <td>@assignment.End_Date</td>
+                <td>
+                    <a asp-action="Edit"
+                       asp-route-id="@assignment.Assignment_ID"
+                       class="btn btn-warning">Edit</a>
+
+                    <a asp-action="Delete"
+                       asp-route-id="@assignment.Assignment_ID"
+                       class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

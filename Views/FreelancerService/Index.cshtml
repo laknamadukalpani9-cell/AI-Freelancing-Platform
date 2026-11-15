@@ -1,0 +1,64 @@
+@{
+    ViewData["Title"] = "Freelancer Service Management";
+}
+
+<h2>Freelancer Service Management</h2>
+
+<div class="card p-4 mb-4">
+    <h4>Add Service to Freelancer</h4>
+
+    <form asp-action="Add" method="post">
+
+        <div class="mb-3">
+            <label>Freelancer</label>
+            <select name="Freelancer_ID" asp-items="ViewBag.Freelancer_ID" class="form-control">
+                <option value="">-- Select Freelancer --</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label>AI Service</label>
+            <select name="Service_ID" asp-items="ViewBag.Service_ID" class="form-control">
+                <option value="">-- Select Service --</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Service</button>
+    </form>
+</div>
+
+<h4>Existing Freelancer Services</h4>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Freelancer ID</th>
+            <th>Freelancer Name</th>
+            <th>Service ID</th>
+            <th>Service Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var link in ViewBag.Links)
+        {
+            <tr>
+                <td>@link.Freelancer_ID</td>
+                <td>@link.FreelancerName</td>
+                <td>@link.Service_ID</td>
+                <td>@link.ServiceName</td>
+                <td>
+                    <form asp-action="Remove" method="post">
+                        <input type="hidden" name="Freelancer_ID" value="@link.Freelancer_ID" />
+                        <input type="hidden" name="Service_ID" value="@link.Service_ID" />
+                        <button type="submit" class="btn btn-danger btn-sm"
+                                onclick="return confirm('Are you sure you want to remove this service?')">
+                            Remove
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

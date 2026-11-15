@@ -1,0 +1,48 @@
+
+@model IEnumerable<AIFreelancingPlatform.Models.Database.Freelancer>
+
+@{
+    ViewData["Title"] = "Freelancer Management";
+}
+
+<h2>Freelancer Management</h2>
+
+<a asp-action="Create" class="btn btn-primary mb-3">
+    Add New Freelancer
+</a>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Location</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var freelancer in Model)
+        {
+            <tr>
+                <td>@freelancer.Freelancer_ID</td>
+                <td>@freelancer.Name</td>
+                <td>@freelancer.Email</td>
+                <td>@freelancer.Phone</td>
+                <td>@freelancer.Location</td>
+
+                <td>
+                    <a asp-action="Edit"
+                       asp-route-id="@freelancer.Freelancer_ID"
+                       class="btn btn-warning">Edit</a>
+
+                    <a asp-action="Delete"
+                       asp-route-id="@freelancer.Freelancer_ID"
+                       class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,26 @@
+@model AIFreelancingPlatform.Models.Database.AI_Service
+
+@{
+    ViewData["Title"] = "Edit AI Service";
+}
+
+<h2>Edit AI Service</h2>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="Service_ID" />
+
+    <div class="mb-3">
+        <label asp-for="Service_Name" class="form-label">Service Name</label>
+        <input asp-for="Service_Name" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Description</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update AI Service</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+
+</form>

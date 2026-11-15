@@ -1,0 +1,48 @@
+@model IEnumerable<AIFreelancingPlatform.Models.Database.Project>
+
+@{
+    ViewData["Title"] = "Project Management";
+}
+
+<h2>Project Management</h2>
+
+<a asp-action="Create" class="btn btn-primary mb-3">
+    Add New Project
+</a>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Client</th>
+            <th>Project Name</th>
+            <th>Description</th>
+            <th>Budget</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var project in Model)
+        {
+            <tr>
+                <td>@project.Project_ID</td>
+                <td>@project.Client?.Name</td>
+                <td>@project.Project_Name</td>
+                <td>@project.Description</td>
+                <td>@project.Budget</td>
+                <td>@project.Status</td>
+                <td>
+                    <a asp-action="Edit"
+                       asp-route-id="@project.Project_ID"
+                       class="btn btn-warning">Edit</a>
+
+                    <a asp-action="Delete"
+                       asp-route-id="@project.Project_ID"
+                       class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
