@@ -13,3 +13,10 @@ AI Projects and Services Freelancing Platform - Database and Web Application
 - Payment Management
 - Review and Rating System
 - Database Management
+## Technologies Used
+
+- C#
+- ASP.NET Core
+- .NET
+- SQL Server
+- SQL Server Management Studio (SSMS)
