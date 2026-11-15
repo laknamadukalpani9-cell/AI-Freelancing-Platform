@@ -20,3 +20,20 @@ AI Projects and Services Freelancing Platform - Database and Web Application
 - .NET
 - SQL Server
 - SQL Server Management Studio (SSMS)
+## Database Description
+
+The system uses Microsoft SQL Server to store and manage data.
+
+The database includes tables for:
+- Users
+- Freelancers
+- Clients
+- AI Projects
+- AI Services
+- Skills
+- Proposals
+- Assignments
+- Payments
+- Reviews
+
+The database uses primary keys and foreign keys to maintain relationships between tables.
